@@ -11,22 +11,35 @@
     - average([1, 1]) // Retorno: 1;
     - average([1, '2']) // Retorno: undefined;
 */
+
+const calculateAverage = (array, sumArray) => {
+  // let averageNow = sumArray / array.length;
+  // if (averageNow % 1 === 0) {
+  //   return averageNow;
+  // }
+  // return Math.round(averageNow);
+};
+
 const average = (array) => {
- let sumAverage = 0;
- let countAverage = 0;
- for (let i = 0; i < array.length; i += 1) {
-  if (typeof array[i] === 'number') {
-   sumAverage += array[i];
-   countAverage += 1;
-  } else {
-   return undefined;
+  if (array.length === 0) {
+    return undefined;
   }
- }
- let averageNow = sumAverage / array.length;
- if (averageNow % 1 === 0) {
-  return (averageNow);
- }
-  return Math.round(averageNow);
+  let identificador = 0;
+  const sum = array.reduce((acc, element) => {
+    if (typeof element !== 'number') {
+      identificador += 1;
+      return undefined;
+    }
+    acc += element;
+    return acc;
+  });
+
+  if (identificador > 0) {
+    return undefined;
+  }
+  if (typeof sum === 'number') {
+    return Math.round(sum / array.length);
+  }
 };
 
 module.exports = average;
