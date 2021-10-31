@@ -37,7 +37,7 @@ describe('6 - Implemente os casos de teste para a função `productDetails`', ()
     expect(productDetails('firstProduct', 'secondProduct')).toHaveLength(2);
     // Teste se os dois itens dentro do array retornado pela função são objetos.
     // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    expect(productDetails('firstProduct', 'secondProduct')).;
+    expect(productDetails('firstProduct', 'secondProduct')).toHaveProperty('name', 'firstProduct', 'secondProduct');
     // Teste se os dois productIds terminam com 123.
     expect(productDetails('firstProduct', 'secondProduct')).toHaveProperty('details.productId', 'firstProduct123', 'secondProduct123')
   });
